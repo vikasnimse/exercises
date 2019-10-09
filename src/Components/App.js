@@ -31,6 +31,14 @@ export default class extends Component {
       exercise: exercises.find(ex => ex.id === id)
     }))
   }
+  handleExerciseCreate = exercise =>{
+    this.setState(({ exercises }) => ({
+      exercises:[
+        ...exercises,
+        exercise
+      ]
+    }))
+  }
   render() {
     const exercises = this.getExercisesByMuscles(),
       { category, exercise } = this.state
@@ -39,7 +47,10 @@ export default class extends Component {
       console.log(exercise);
     return (
       <Fragment>
-        <Header />
+        <Header 
+          onExerciseCreate={this.handleExerciseCreate} 
+          muscles={muscles}
+        />
 
         <Exercises
           exercise={exercise}

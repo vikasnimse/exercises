@@ -24,7 +24,7 @@ export default ({
             <Paper style={styles.Paper}>
                 {exercises.map(([group, exercises]) =>
                     !category || category === group
-                        ? <Fragment key={group}>
+                        ? <Fragment key={group} >
                             <Typography
                                 variant="h5"
                                 style={{ textTransform: 'capitalize' }}
